@@ -1,0 +1,76 @@
+$small-margin: 16px;
+$medium-margin: 24px;
+$large-margin: 32px;
+$color-primary: #4CAF50;
+$color-secondary: #000;
+
+/* Use @extend for this */
+%globalstyles {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    line-height:1.5;
+}
+
+.globalstyles, html, body {
+    @extend %globalstyles;
+}
+/* Use nesting for the rest */
+.card {
+    width: 33.33333%;
+    margin-bottom: $small-margin !important;
+    
+    .card-shadow:hover {
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+    
+    .card-info {
+        list-style-type: none;
+        padding: 0;
+        margin:0;
+        border: 1px solid rgb(175, 174, 174) !important;
+        text-align:center;
+
+        li {
+            padding: 8px $small-margin;
+            border-bottom:1px solid #ddd;
+            :last-child {
+                border-bottom: none;
+            }
+        }
+
+        .card-item {
+            padding-top: $small-margin !important;
+            padding-bottom:$small-margin !important;
+            span {
+                font-weight: bold;
+            }
+            .card-wide {
+                letter-spacing: 4px
+            }
+            .card-opacity {
+                opacity:0.60
+            }
+        }
+        .card-btn {
+            color: $color-secondary !important;
+            background-color: #f1f1f1 !important;
+            padding-top: $medium-margin !important;
+            padding-bottom: $medium-margin !important;
+            .button {
+                color: #fff !important;
+                background-color: $color-primary !important;
+                padding: 12px $medium-margin !important
+            }
+        }
+    }
+    
+    .card-header {
+        color: #fff !important;
+        background-color: $color-secondary !important;
+        font-size:$medium-margin !important;
+        padding-top: $large-margin !important;
+        padding-bottom:$large-margin !important
+    }
+}
+
+
